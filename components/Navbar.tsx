@@ -1,16 +1,43 @@
 "use client"
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from "../assets/logo.png"
 import {Icon} from "@iconify/react";
+import {usePathname} from "next/navigation";
+import {navigationItems} from "@/constants/navigationItems";
+import cn from "classnames"
 
-const NavBar = () => {
+
+function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
+    useEffect(() => {
+        document.body.style.overflow = isOpen ? "hidden" : "auto"
+    }, [isOpen]);
+
+    const [isAtTop, setIsAtTop] = useState(true);
+
+    useEffect(() => {
+        const checkScrollTop = () => {
+            setIsAtTop(window.scrollY === 0);
+        };
+
+        window.addEventListener('scroll', checkScrollTop);
+
+        return () => {
+            window.removeEventListener('scroll', checkScrollTop);
+        };
+    }, []);
+
+    const pathname = usePathname();
+
+
+
+
     return (
-        <nav className="bg-transparent shadow-lg ">
-            <div className="mx-auto max-w-6xl px-4">
+        <nav className={cn( isAtTop ? "bg-[#ffffff1c]" : "bg-defaultGray", "w-full shadow-lg fixed transition-all duration-300 ease-in-out")}>
+            <div className="mx-auto max-w-7xl px-4">
                 <div className="flex justify-between">
                     <div className="flex space-x-7">
                         <div>
@@ -22,33 +49,22 @@ const NavBar = () => {
                             </Link>
                         </div>
                         <div className="hidden flex-wrap gap-4 gap-y-0  uppercase md:flex">
-                            <Link className="flex items-center px-2 py-4 font-semibold md:hover:text-companyPink"
-                                  href="#">Home</Link>
-                            <Link className="flex items-center px-2 py-4 font-semibold md:hover:text-companyPink"
-                                  href="/services">Services</Link>
-                            <Link className="flex items-center px-2 py-4 font-semibold md:hover:text-companyPink"
-                                  href="/contact">Contact</Link>
-                            <Link className="flex items-center px-2 py-4 font-semibold md:hover:text-companyPink"
-                                  href="/about">About</Link>
-                            <Link className="flex items-center px-2 py-4 font-semibold md:hover:text-companyPink"
-                                  href="/downloads">Downloads</Link>
-                            <Link className="flex items-center px-2 py-4 font-semibold md:hover:text-companyPink"
-                                  href="/request-a-pricelist">Request
-                                a
-                                pricelist</Link>
-                            <Link className="flex items-center px-2 py-4 font-semibold md:hover:text-companyPink"
-                                  href="/connect-with-us">Connect-with-us</Link>
+                            {navigationItems.map((item, i) => (
+                                <Link key={i} className={cn(pathname === item.href ? "text-companyPink" : "text-white","flex items-center px-2 py-4 font-semibold md:hover:text-companyPink")}
+                                      href={item.href}>{item.name}</Link>
+                            ))}
 
 
                         </div>
                     </div>
                     <div className="ml-8 hidden items-center gap-4 md:flex">
-                        <a href="#"
-                           className="rounded p-2 font-medium text-gray-500 transition duration-300  "><Icon
-                            icon="entypo-social:instagram-with-circle" width={"33"} height={"33"} color="#A42E68"/></a>
-                        <a href="#"
-                           className="rounded p-2 font-medium text-gray-500 transition duration-300  "><Icon
-                            icon="entypo-social:facebook-with-circle" width={"33"} height={"33"} color="#A42E68"/></a>
+                        <a href={"#"}><Icon icon="mdi:instagram"
+                                            className={"rounded-full bg-companyPink p-2 text-white hover:bg-companyPinkHover"}
+                                            width="33" height="33"/></a>
+                        <a href={"#"}><Icon icon="ei:sc-facebook"
+                                            className={"rounded-full bg-companyPink p-2 text-white hover:bg-companyPinkHover"}
+                                            width="33" height="33"/></a>
+
                     </div>
                     <div className="flex items-center md:hidden">
                         <button onClick={() => setIsOpen(!isOpen)}>
@@ -62,7 +78,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div
-                className={`${isOpen ? 'translate-x-0' : '-translate-x-full'} absolute flex w-full flex-col bg-white transition-transform duration-300 md:hidden`}>
+                className={`${isOpen ? 'translate-x-0' : '-translate-x-full'} absolute flex h-dvh w-full flex-col bg-white transition-transform duration-300 md:hidden`}>
                 <Link className="flex items-center px-2 py-4 font-semibold" href="#">Home</Link>
                 <Link className="flex items-center px-2 py-4 font-semibold" href="/services">Services</Link>
                 <Link className="flex items-center px-2 py-4 font-semibold" href="/contact">Contact</Link>
@@ -72,17 +88,17 @@ const NavBar = () => {
                     pricelist</Link>
                 <Link className="flex items-center px-2 py-4 font-semibold"
                       href="/connect-with-us">Connect-with-us</Link>
-                <div className={"flex"}>
-                    <a href="#"
-                       className="rounded p-2 font-medium text-gray-500 transition duration-300 "><Icon
-                        icon="entypo-social:instagram-with-circle" width={"33"} height={"33"} color="#A42E68"/></a>
-                    <a href="#"
-                       className="rounded p-2 font-medium text-gray-500 transition duration-300 "><Icon
-                        icon="entypo-social:facebook-with-circle" width={"33"} height={"33"} color="#A42E68"/></a>
+                <div className={"flex gap-8 px-2"}>
+                    <a href={"#"}><Icon icon="mdi:instagram"
+                                        className={"rounded-full bg-companyPink p-2 text-white hover:bg-companyPinkHover"}
+                                        width="42" height="42"/></a>
+                    <a href={"#"}><Icon icon="ei:sc-facebook"
+                                        className={"rounded-full bg-companyPink p-2 text-white hover:bg-companyPinkHover"}
+                                        width="42" height="42"/></a>
                 </div>
             </div>
         </nav>
     );
-};
+}
 
 export default NavBar;

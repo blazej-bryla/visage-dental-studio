@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import React from "react";
 import Footer from "@/components/Footer";
+import cn from "classnames";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(inter.className, "relative")}>
       <DefaultLayout>
         {children}
       </DefaultLayout>
