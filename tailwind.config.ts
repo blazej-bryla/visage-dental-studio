@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         companyPink: "#A42E68",
+        defaultGray: "#333333",
       }
 
     },

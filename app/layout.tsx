@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavigationMenu from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import React from "react";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,8 +34,9 @@ const DefaultLayout = ({children}: {
 
   return(
       <>
-        <NavigationMenu/>
+        <Navbar/>
         {children}
+          <Footer />
       </>
   )
 }
