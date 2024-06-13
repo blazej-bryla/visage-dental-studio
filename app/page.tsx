@@ -1,7 +1,8 @@
-export default function Home() {
-    return (
-        <main>
+const Page = () => {
+  return (
+    <main>
             Main container
-        </main>
-    );
+    </main>
+  )
 }
+export default Page
