@@ -13,7 +13,7 @@ const Services = ({items}: { items: Array<Services> }) => {
             <span
               className="info-span absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] bg-companyPink px-4 py-2 uppercase text-white opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100">
             Know more
-          </span>
+            </span>
           </div>
           <h4 className="mb-8 pt-4 text-center font-heading text-2xl group-hover:underline">{item.text}</h4>
         </Link>

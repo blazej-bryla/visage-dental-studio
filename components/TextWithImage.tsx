@@ -16,7 +16,7 @@ interface Props {
 const TextWithImage = ({title, text, buttonText, href, className, image, alt, dark = false}: Props) => {
 
   return(
-    <section className={dark ? 'bg-darkSection' : null}>
+    <section className={dark ? 'bg-darkSection' : 'bg-white'}>
       <div className={cn(className, 'defaultContainer w-full px-2 py-24 flex md:flex-row flex-col items-center gap-12 md:gap-24')}>
 
         <Image className={'rounded-xl'} src={image} alt={alt} width={483}/>

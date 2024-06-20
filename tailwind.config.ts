@@ -16,14 +16,14 @@ const config: Config = {
         darkSection: '#F5F5F5'
       },
       maxWidth:{
-        projectWidth: 1200
+        'projectWidth': '1200px'
       },
       fontFamily: {
         heading: ['Times New Roman']
       },
       transitionProperty: {
         'height': 'height',
-        'spacing': 'margin, padding',
+        'spacing': 'margin, padding'
       }
     }
   },
