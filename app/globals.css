@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+    .defaultContainer{
+        @apply max-w-projectWidth;
+        @apply mx-auto;
+    }
+}
