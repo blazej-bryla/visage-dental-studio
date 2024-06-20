@@ -1,4 +1,4 @@
-import {PassionImage, DentalTechImage} from '@/assets/images'
+import {PassionImage, DentalTechImage, ImplantologyImage, ZirconiaImage, PbcShellsImage} from '@/assets/images'
 
 const FirstSection = {
   title: 'We have a passion for technology',
@@ -17,4 +17,30 @@ const SecondSection = {
   image: DentalTechImage
 }
 
-export {FirstSection, SecondSection}
+const ServicesSection = {
+  title: 'Services',
+  href: '/services',
+  subtitle: 'See all services ->',
+  items: [
+    {
+      image: ImplantologyImage,
+      alt: 'Implantology & Surgical Guides Image',
+      text:'Implantology & Surgical Guides ',
+      href: '/services#implantology'
+    },
+    {
+      image: ZirconiaImage,
+      alt: 'Zirconia Crown and Bridges Image',
+      text: 'Zirconia Crown and Bridges',
+      href: '/services#zirconia'
+    },
+    {
+      image: PbcShellsImage,
+      alt: 'PBC Bridges / Shell Crowns (Precious & Non-Precious) Image',
+      text: 'PBC Bridges / Shell Crowns (Precious & Non-Precious)',
+      href: '/services#pbc'
+    },
+  ]
+}
+
+export {FirstSection, SecondSection, ServicesSection}

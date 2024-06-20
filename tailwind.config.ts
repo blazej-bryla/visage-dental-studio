@@ -20,6 +20,10 @@ const config: Config = {
       },
       fontFamily: {
         heading: ['Times New Roman']
+      },
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
       }
     }
   },

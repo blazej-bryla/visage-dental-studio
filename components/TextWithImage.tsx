@@ -9,14 +9,15 @@ interface Props {
   href?: string,
   className?: string,
   image: StaticImageData,
-  alt: string
+  alt: string,
+  dark?: boolean
 }
 
-const TextWithImage = ({title, text, buttonText, href, className, image, alt}: Props) => {
+const TextWithImage = ({title, text, buttonText, href, className, image, alt, dark = false}: Props) => {
 
   return(
-    <div className={'defaultContainer'}>
-      <div className={cn(className, 'w-full px-2 py-24 flex md:flex-row flex-col items-center gap-12 md:gap-24')}>
+    <section className={dark ? 'bg-darkSection' : null}>
+      <div className={cn(className, 'defaultContainer w-full px-2 py-24 flex md:flex-row flex-col items-center gap-12 md:gap-24')}>
 
         <Image className={'rounded-xl'} src={image} alt={alt} width={483}/>
 
@@ -29,7 +30,7 @@ const TextWithImage = ({title, text, buttonText, href, className, image, alt}: P
 
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 export default TextWithImage

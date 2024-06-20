@@ -1,5 +1,8 @@
 import TextWithImage from '@/components/TextWithImage'
-import {FirstSection, SecondSection} from '../constants/FrontPageData'
+import {FirstSection, SecondSection, ServicesSection} from '../constants/FrontPageData'
+import SectionCenterTitle from '@/components/SectionCenterTitle'
+import Services from '@/components/Services'
+
 
 const Page = () => {
   return (
@@ -18,8 +21,13 @@ const Page = () => {
         text={SecondSection.text}
         image={SecondSection.image}
         alt={'Dental tech section image'}
-        className={'md:flex-row-reverse bg-darkSection'}
+        className={'md:flex-row-reverse'}
+        dark={true}
       />
+      <div className={'py-24'}>
+        <SectionCenterTitle title={ServicesSection.title} subtitle={ServicesSection.subtitle} href={ServicesSection.href} />
+        <Services items={ServicesSection.items}/>
+      </div>
     </main>
   )
 }
