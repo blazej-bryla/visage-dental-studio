@@ -1,9 +1,10 @@
 import TextWithImage from '@/components/TextWithImage'
-import {FirstSection, SecondSection, ServicesSection} from '../constants/FrontPageData'
+import {FirstSection, ImageComprasionSection, SecondSection, ServicesSection} from '../constants/FrontPageData'
 import SectionCenterTitle from '@/components/SectionCenterTitle'
 import Services from '@/components/Services'
 import HomeVideo from '@/public/assets/videos/home1.mp4'
 import BackgroundVideo from 'next-video/background-video'
+import ComparsionImage from '@/components/ComparsionImage'
 
 
 const Page = () => {
@@ -37,6 +38,15 @@ const Page = () => {
           <SectionCenterTitle title={ServicesSection.title} subtitle={ServicesSection.subtitle}
             href={ServicesSection.href}/>
           <Services items={ServicesSection.items}/>
+        </div>
+        <div className={'bg-darkSection py-24'}>
+          <SectionCenterTitle title={'Smile designing'} />
+          <div className={'defaultContainer flex flex-col items-center justify-center gap-8 px-2 md:flex-row md:justify-between'}>
+            {ImageComprasionSection.map((item, i) => (
+              <ComparsionImage images={item.images} key={i} />
+            ))}
+          </div>
+
         </div>
       </main>
     </>
