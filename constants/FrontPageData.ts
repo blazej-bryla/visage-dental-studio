@@ -1,4 +1,4 @@
-import {PassionImage, DentalTechImage, ImplantologyImage, ZirconiaImage, PbcShellsImage} from '@/assets/images'
+import {PassionImage, DentalTechImage, ImplantologyImage, ZirconiaImage, PbcShellsImage} from '@/public/assets/images'
 
 const FirstSection = {
   title: 'We have a passion for technology',

@@ -13,7 +13,8 @@ const config: Config = {
         companyPinkHover: '#942A5E',
         defaultGray: '#333333',
         thinGray: '#151515CC',
-        darkSection: '#F5F5F5'
+        darkSection: '#F5F5F5',
+        lightPink: '#EADAF0'
       },
       maxWidth:{
         'projectWidth': '1200px'
