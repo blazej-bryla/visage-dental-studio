@@ -2,23 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    .defaultContainer{
-        @apply max-w-projectWidth;
-        @apply mx-auto;
-    }
-}
-
-@keyframes textclip {
-    to {
-        background-position: 200% center;
-    }
-}
-
-.gradient-text {
-    background-image: linear-gradient(-225deg, #AA336A 0%, #A42E68 30%, #FFB6C1 67%, #A42E68 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% auto;
-    animation: textclip 3s linear infinite;
-}
