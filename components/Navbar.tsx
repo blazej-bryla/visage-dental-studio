@@ -2,7 +2,7 @@
 import {useEffect, useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Logo from '../assets/logo.png'
+import Logo from '@/public/assets/logo.png'
 import {Icon} from '@iconify/react'
 import {usePathname} from 'next/navigation'
 import {navigationItems} from '@/constants/navigationItems'
@@ -55,7 +55,7 @@ function NavBar() {
 
   return (
     <nav
-      className={cn(isAtTop && !isOpen ? 'bg-[#ffffff1c]' : 'bg-defaultGray', 'w-full shadow-lg fixed transition-all duration-300 ease-in-out')}>
+      className={cn(isAtTop && !isOpen ? 'bg-[#ffffff3d]' : 'bg-defaultGray', 'w-full shadow-lg fixed transition-all duration-300 ease-in-out z-40')}>
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex justify-between">
           <div className="flex space-x-7">

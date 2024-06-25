@@ -1,4 +1,5 @@
-import {PassionImage, DentalTechImage, ImplantologyImage, ZirconiaImage, PbcShellsImage} from '@/assets/images'
+import {PassionImage, DentalTechImage, ImplantologyImage, ZirconiaImage, PbcShellsImage} from '@/public/assets/images'
+import {ImageComprasionAfter, ImageComprasionBefore} from '@/public/assets/images/comprasion'
 
 const FirstSection = {
   title: 'We have a passion for technology',
@@ -39,8 +40,53 @@ const ServicesSection = {
       alt: 'PBC Bridges / Shell Crowns (Precious & Non-Precious) Image',
       text: 'PBC Bridges / Shell Crowns (Precious & Non-Precious)',
       href: '/services#pbc'
-    },
+    }
   ]
 }
 
-export {FirstSection, SecondSection, ServicesSection}
+const ImageComprasionSection = [
+  {
+    images: [
+      {
+        src: ImageComprasionBefore,
+        alt: 'Woman image comprasion before image',
+        slot: 'first'
+      },
+      {
+        src: ImageComprasionAfter,
+        alt: 'Woman image comprasion after image',
+        slot: 'second'
+      }
+    ]
+  },
+  {
+    images: [
+      {
+        src: ImageComprasionBefore,
+        alt: 'Woman image comprasion before image',
+        slot: 'first'
+      },
+      {
+        src: ImageComprasionAfter,
+        alt: 'Woman image comprasion after image',
+        slot: 'second'
+      }
+    ]
+  },
+  {
+    images: [
+      {
+        src: ImageComprasionBefore,
+        alt: 'Woman image comprasion before image',
+        slot: 'first'
+      },
+      {
+        src: ImageComprasionAfter,
+        alt: 'Woman image comprasion after image',
+        slot: 'second'
+      }
+    ]
+  }
+]
+
+export {FirstSection, SecondSection, ServicesSection, ImageComprasionSection}
